@@ -1,0 +1,18 @@
+{% extends 'updates/main.html' %}
+{% include 'updates/navbar.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+{% load i18n %}
+
+
+
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {% language 'de' %}
+        {{form|crispy}}
+        {% endlanguage %}
+        <button type="submit" class="btn btn-success">Registrieren</button>
+    </form>
+
+{% endblock %}
